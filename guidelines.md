@@ -58,7 +58,7 @@
 
 * Enable comments if possible to encourage dialogue.
 
-* Submit via GitHub issue titled “Add \[your-domain\] to Planet WordPress,” including the feed URL and preferred display name.
+* Submit via GitHub issue titled “Add \[your-domain\] to Planet FAIR,” including the feed URL and preferred display name.
 
 ---
 
