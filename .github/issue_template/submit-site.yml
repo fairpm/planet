@@ -1,0 +1,155 @@
+name: Submit a source to Planet FAIR
+description: Request to add a WordPress-related RSS/Atom feed to Planet FAIR (planet.fair.pm)
+title: "[Source]: <your-domain>"
+labels: ["planet", "source:proposal", "needs-review"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thanks for sharing your feed with Planet FAIR! Before submitting:
+        • Your feed must be WordPress-focused and align with the Planet FAIR guidelines.
+        • It must include at least one post from the last 3 months.
+        • It should validate successfully in a feed validator.
+        • Prefer excerpts of ~600–1000 characters.
+        • Currently, Planet FAIR includes English sources only.
+        See guidelines: https://github.com/fairpm/planet/blob/main/guidelines.md
+
+  - type: dropdown
+    id: request_type
+    attributes:
+      label: Request type
+      description: Choose whether you’re adding a new feed or updating an existing one.
+      options:
+        - Add a new feed
+        - Update an existing feed
+      default: 0
+    validations:
+      required: true
+
+  - type: input
+    id: display_name
+    attributes:
+      label: Preferred display name
+      description: How the source should be shown in Planet FAIR (e.g., “Example Dev Blog”).
+      placeholder: Example Dev Blog
+    validations:
+      required: true
+
+  - type: input
+    id: site_url
+    attributes:
+      label: Site URL
+      description: The home page of your site.
+      placeholder: https://example.com/
+    validations:
+      required: true
+
+  - type: input
+    id: feed_url
+    attributes:
+      label: Feed URL (RSS or Atom)
+      description: Provide a category/tag feed if your site mixes topics so only Planet-appropriate posts appear.
+      placeholder: https://example.com/category/wordpress/feed/
+    validations:
+      required: true
+
+  - type: dropdown
+    id: feed_format
+    attributes:
+      label: Feed format
+      description: Planet FAIR supports RSS or Atom.
+      options:
+        - RSS
+        - Atom
+    validations:
+      required: true
+
+  - type: input
+    id: recent_post
+    attributes:
+      label: Link to a recent post (≤ 3 months old)
+      description: Used to verify recency.
+      placeholder: https://example.com/2025/08/awesome-wp-post/
+    validations:
+      required: true
+
+  - type: input
+    id: validator_link
+    attributes:
+      label: Feed validator result URL
+      description: Paste the result URL from a validator (e.g., W3C). Submissions with errors may be paused.
+      placeholder: https://validator.w3.org/feed/check.cgi?url=https%3A%2F%2Fexample.com%2Ffeed%2F
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: compliance
+    attributes:
+      label: Guidelines & eligibility
+      description: Confirm your feed aligns with Planet FAIR criteria.
+      options:
+        - label: My feed includes only WordPress-appropriate content per Planet FAIR guidelines.
+          required: true
+        - label: My feed has at least one post in the last 3 months.
+          required: true
+        - label: My feed validates without errors/warnings that affect parsing.
+          required: true
+        - label: My feed provides excerpts around 600–1000 characters (or a summary field).
+          required: true
+        - label: My feed is primarily in English.
+          required: true
+        - label: I understand feeds may be removed for guideline violations, inactivity, spam, or non-WP content.
+          required: true
+
+  - type: checkboxes
+    id: content_types
+    attributes:
+      label: Primary content types
+      description: Helps moderators categorize your source.
+      options:
+        - label: Development
+        - label: Themes
+        - label: Plugins
+        - label: Advocacy / Community
+        - label: Events / Meetups
+        - label: Case Studies
+        - label: FAIR project updates
+        - label: Other
+
+  - type: textarea
+    id: scope_notes
+    attributes:
+      label: Scope notes (optional)
+      description: If needed, note which categories/tags your feed includes (e.g., only posts tagged “WordPress”).
+      placeholder: "Example: Only posts under /category/wordpress/ are in this feed."
+
+  - type: input
+    id: update_original_issue
+    attributes:
+      label: Link to original addition request (if updating)
+      description: Provide the previous issue URL if this is an update request.
+      placeholder: https://github.com/fairpm/planet/issues/123
+
+  - type: input
+    id: contact_name
+    attributes:
+      label: Contact name (optional)
+      placeholder: Jane Doe
+
+  - type: input
+    id: contact_email
+    attributes:
+      label: Contact email (optional)
+      placeholder: email@example.com
+
+  - type: input
+    id: social
+    attributes:
+      label: Social (optional)
+      description: Mastodon/Twitter handle for attribution if needed.
+      placeholder: "@example"
+
+  - type: markdown
+    attributes:
+      value: |
+        Moderation note: By submitting, you accept that Planet FAIR moderators may approve, defer, or remove feeds based on the guidelines and community safety policies.
