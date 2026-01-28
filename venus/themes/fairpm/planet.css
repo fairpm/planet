@@ -1,19 +1,14 @@
-body {
-	border-right: 1px solid black;
-	margin-right: 200px;
 
+body {
+	margin-right: 200px;
 	padding-left: 20px;
 	padding-right: 20px;
-
-	/* styles from fair.pm theme */
 	font-family: "Mona Sans", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
 	font-size: 1.2rem;
 	font-weight: 400;
 	line-height: 1.7;
 	text-rendering: geometricPrecision;
 }
-
-/* styles from fair.pm theme */
 .site {
   margin-left: auto;
   margin-right: auto;
@@ -37,18 +32,16 @@ body {
 .site-header a {
 	color: #fff;
 }
-body a {
+a {
   color: #0049d1;
   text-decoration: underline;
   text-underline-offset: 0.275rem;
   transition: all 150ms;
   text-decoration-thickness: 4px;
 }
-body a:hover {
+a:hover {
   text-decoration-thickness: 8px;
 }
-
-/* other edits */
 .daygroup {
 	max-width: 960px;
 	margin-left: auto;
@@ -60,20 +53,58 @@ body a:hover {
 .channelgroup .entry {
 	margin-left: 1.5rem;
 }
-
-
-
-
-
-
+.entrygroup {
+	padding: 0 1.5rem;
+}
+.entry {
+	margin-top: .5rem;
+	height: calc( 1.2rem * 5 );
+	overflow: hidden;
+	position: relative;
+}
+.entry::before {
+	display: block;
+	content: "";
+	position: absolute;
+	z-index: 5;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(180deg,rgba(255, 255, 255, .3) 20%, rgba(255, 255, 255, .5) 80%, rgba(255, 255, 255, 1) 95%);
+}
+.entry::after {
+		display: block;
+	content: "999";
+	background-color: #0073aa;
+	color: #fff;
+	font-weight: 600;
+	font-size: 1rem;
+	padding: .7ch 1.2ch;
+	position: absolute;
+	z-index: 9;
+	bottom: 1rem;
+	right: 20%;
+	border-radius: 6px;
+}
+.entry * {
+	font-weight: 300 !important;
+	font-size: .95rem;
+	line-height: 1.2em;
+	margin: 0;
+	padding: 0;
+}
+.entry a {
+	color: inherit;
+	text-decoration: none;
+}
+.entry img, .entry figure, .entry iframe, .entry embed {
+	display: none !important; /* yes it's a poor hack */
+}
 
 
 h1 {
 	margin-top: 0px;
 	padding-top: 20px;
 	font-weight: normal;
-	letter-spacing: -2px;
-	text-transform: lowercase;
 	text-align: right;
 	color: grey;
 }
@@ -85,17 +116,22 @@ h1 {
 h2 {
 	font-weight: normal;
 	color: #200080;
+	font-size: 1.2rem;
 }
 h3 {
 	font-weight: normal;
-	background-color: ##0049d1;
+	background-color: #0073aa;
 	padding: 6px 1ch;
+	border-radius: 6px;
+	font-size: 1.3rem;
 }
 h3 a {
 	color: #fff;
 }
 h4 {
-	font-weight: bold;
+	font-weight: 400;
+	margin: .0;
+	font-size: 1.1rem;
 }
 h4 a {
 	color: inherit;
