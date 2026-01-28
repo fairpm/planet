@@ -4,18 +4,77 @@ body {
 
 	padding-left: 20px;
 	padding-right: 20px;
+
+	/* styles from fair.pm theme */
+	font-family: "Mona Sans", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+	font-size: 1.2rem;
+	font-weight: 400;
+	line-height: 1.7;
+	text-rendering: geometricPrecision;
 }
+
+/* styles from fair.pm theme */
+.site {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+#page .site-header {
+  background: #0073aa;
+  align-items: center;
+}
+.site-header .site-branding {
+  display: flex;
+  align-items: last baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.site-header ul {
+	list-style: none;
+}
+.site-header a {
+	color: #fff;
+}
+body a {
+  color: #0049d1;
+  text-decoration: underline;
+  text-underline-offset: 0.275rem;
+  transition: all 150ms;
+  text-decoration-thickness: 4px;
+}
+body a:hover {
+  text-decoration-thickness: 8px;
+}
+
+/* other edits */
+.daygroup {
+	max-width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.channelgroup {
+	margin-left: 1.5rem;
+}
+.channelgroup .entry {
+	margin-left: 1.5rem;
+}
+
+
+
+
+
+
+
 
 h1 {
 	margin-top: 0px;
 	padding-top: 20px;
-
-	font-family: "Bitstream Vera Sans", sans-serif;
 	font-weight: normal;
 	letter-spacing: -2px;
 	text-transform: lowercase;
 	text-align: right;
-
 	color: grey;
 }
 
@@ -24,54 +83,34 @@ h1 {
 }
 
 h2 {
-	font-family: "Bitstream Vera Sans", sans-serif;
 	font-weight: normal;
 	color: #200080;
-
-	margin-left: -20px;
 }
-
 h3 {
-	font-family: "Bitstream Vera Sans", sans-serif;
 	font-weight: normal;
-
-	background-color: #a0c0ff;
-	border: 1px solid #5080b0;
-
-	padding: 4px;
+	background-color: ##0049d1;
+	padding: 6px 1ch;
 }
-
 h3 a {
-	text-decoration: none;
-	color: inherit;
+	color: #fff;
 }
-
 h4 {
-	font-family: "Bitstream Vera Sans", sans-serif;
 	font-weight: bold;
 }
-
 h4 a {
-	text-decoration: none;
 	color: inherit;
 }
 
-img.face {
-	float: right;
-	margin-top: -3em;
-}
+img.face { display: none; }
 
 .entry {
 	margin-bottom: 2em;
 }
-
 .entry .date {
-	font-family: "Bitstream Vera Sans", sans-serif;
 	color: grey;
+	font-size: .9em;
 }
-
 .entry .date a {
-	text-decoration: none;
 	color: inherit;
 }
 
@@ -88,55 +127,38 @@ img.face {
 	padding-top: 20px;
 	padding-left: 0px;
 
-	font-family: "Bitstream Vera Sans", sans-serif;
 	font-size: 85%;
 }
-
 .sidebar h2 {
 	font-size: 110%;
 	font-weight: bold;
-	color: black;
-
 	padding-left: 5px;
 	margin-left: 0px;
 }
-
 .sidebar ul {
 	padding-left: 1em;
 	margin-left: 0px;
-
 	list-style-type: none;
 }
-
 .sidebar ul li:hover {
 	color: grey;
 }
-
 .sidebar ul li a {
         text-decoration: none;
 }
-
-.sidebar ul li a:hover {
-        text-decoration: underline;
-}
-
 .sidebar ul li a img {
         border: 0;
 }
-
 .sidebar p {
 	border-top: 1px solid grey;
 	margin-top: 30px;
 	padding-top: 10px;
-
 	padding-left: 5px;
 }
-
 .sidebar .message {
     cursor: help;
     border-bottom: 1px dashed red;
 }
-
 .sidebar a.message:hover {
     cursor: help;
 	background-color: #ff0000;
@@ -144,7 +166,3 @@ img.face {
 	text-decoration: none !important;
 }
 
-a:hover {
-	text-decoration: underline !important;
-	color: blue !important;
-}
