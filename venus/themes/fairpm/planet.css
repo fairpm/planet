@@ -1,0 +1,208 @@
+
+body {
+	margin-right: 300px;
+	padding-left: 20px;
+	padding-right: 20px;
+	font-family: "Mona Sans", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
+	font-size: 1.2rem;
+	font-weight: 400;
+	line-height: 1.7;
+	text-rendering: geometricPrecision;
+}
+.site {
+  margin-left: auto;
+  margin-right: auto;
+  max-width: 100%;
+  overflow: hidden;
+  position: relative;
+}
+#page .site-header {
+  background: #0073aa;
+  align-items: center;
+}
+.site-header .site-branding {
+  display: flex;
+  align-items: last baseline;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+.site-header ul {
+	list-style: none;
+}
+.site-header a {
+	color: #fff;
+}
+a {
+  color: #0049d1;
+  text-decoration: underline;
+  text-underline-offset: 0.275rem;
+  transition: all 150ms;
+  text-decoration-thickness: 4px;
+}
+a:hover {
+  text-decoration-thickness: 8px;
+}
+.daygroup {
+	max-width: 960px;
+	margin-left: auto;
+	margin-right: auto;
+}
+.channelgroup {
+	margin-left: 1.5rem;
+	position: relative;
+}
+.channelgroup .entry {
+	margin-left: 1.5rem;
+}
+.entrygroup {
+	padding: 0 1.5rem;
+}
+.entry {
+	margin-top: .5rem;
+	height: calc( 1.2rem * 5 );
+	overflow: hidden;
+	position: relative;
+}
+.entry::before {
+	display: block;
+	content: "";
+	position: absolute;
+	z-index: 5;
+	width: 100%;
+	height: 100%;
+	background: linear-gradient(180deg,rgba(255, 255, 255, .3) 20%, rgba(255, 255, 255, .5) 80%, rgba(255, 255, 255, 1) 95%);
+}
+.entry * {
+	font-weight: 300 !important;
+	font-size: .95rem;
+	line-height: 1.2em;
+	margin: 0;
+	padding: 0;
+}
+.entry a {
+	color: inherit;
+	text-decoration: none;
+}
+.entry img, .entry figure, .entry iframe, .entry embed {
+	display: none !important; /* yes it's a poor hack */
+}
+.channelgroup a.button {
+	display: inline-block;
+	background-color: #0073aa;
+	color: #fff;
+	font-weight: 600;
+	font-size: 1rem;
+	padding: .7ch 1.2ch;
+	position: absolute;
+	z-index: 9;
+	bottom: 1rem;
+	right: 20%;
+	border-radius: 6px;
+}
+
+
+h1 {
+	margin-top: 0px;
+	padding-top: 20px;
+	font-weight: normal;
+	text-align: right;
+	color: grey;
+}
+
+.admin {
+	text-align: right;
+}
+
+h2 {
+	font-weight: normal;
+	color: #200080;
+	font-size: 1.2rem;
+}
+h3 {
+	font-weight: normal;
+	background-color: #0073aa;
+	padding: 6px 1ch;
+	border-radius: 6px;
+	font-size: 1.3rem;
+}
+h3 a {
+	color: #fff;
+}
+h4 {
+	font-weight: 400;
+	margin: .0;
+	font-size: 1.1rem;
+}
+h4 a {
+	color: inherit;
+}
+
+img.face { display: none; }
+
+.entry {
+	margin-bottom: 2em;
+}
+.entry .date {
+	color: grey;
+	font-size: .9em;
+}
+.entry .date a {
+	color: inherit;
+}
+
+.sidebar {
+	position: absolute;
+	top: 0px;
+	right: 0px;
+	width: 300px;
+	margin-left: 0px;
+	margin-right: 0px;
+	padding-right: 0px;
+	padding-top: 20px;
+	padding-left: 0px;
+	font-size: 85%;
+}
+.sidebar h2 {
+	font-size: 110%;
+	font-weight: bold;
+	padding-left: 5px;
+	margin-left: 0px;
+}
+.sidebar ul {
+	padding-left: 1em;
+	margin-left: 0px;
+	list-style-type: none;
+	border-left: 2px solid #0049d1;
+}
+.sidebar ul li:hover {
+	color: grey;
+}
+.sidebar ul li a {
+        text-decoration: none;
+}
+.sidebar ul li a img {
+        border: 0;
+}
+.sidebar p {
+	border-top: 1px solid grey;
+	margin-top: 30px;
+	padding-top: 10px;
+	padding-left: 5;
+}
+.sidebar > p > span {
+	display: block;
+	padding-left: 15px;
+	margin-left: -5px;
+	border-left: 2px solid #0049d1;
+}
+.sidebar .message {
+    cursor: help;
+    border-bottom: 1px dashed red;
+}
+.sidebar a.message:hover {
+    cursor: help;
+	background-color: #ff0000;
+	color: #ffffff !important;
+	text-decoration: none !important;
+}
+
