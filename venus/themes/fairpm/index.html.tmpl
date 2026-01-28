@@ -1,7 +1,8 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 
-### Fancy Planet HTML template.
+### fairpm Planet HTML template
+### (was) Fancy Planet HTML template.
 ### 
 ### When combined with the stylesheet and images in the output/ directory
 ### of the Planet source, this gives you a much prettier result than the
@@ -22,6 +23,23 @@
 </head>
 
 <body>
+
+<header class="site-header">     
+<div class="site-branding">
+  <div class="site-title">
+    <a href="https://fair.pm/" rel="home" aria-current="page">
+		<svg width="32px" height="32px" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><defs><style>.cls-1,.cls-2{fill:none;stroke:#fff;stroke-linecap:round;stroke-width:1.5px;}.cls-1{stroke-linejoin:bevel;}.cls-2{stroke-linejoin:round;}</style></defs><g id="ic-folder-download"><line class="cls-1" x1="17" y1="11.93" x2="17" y2="22.07"></line><path class="cls-1" d="M14,19.31l2.58,2.57a.62.62,0,0,0,.89,0L20,19.35"></path><path class="cls-2" d="M8,20.3H4a2,2,0,0,1-2-2V7.3H20a2,2,0,0,1,2,2"></path><path class="cls-2" d="M2,11.1v-6a1,1,0,0,1,.91-1h8.86a.89.89,0,0,1,.64.29L14,7.3"></path></g></svg>		FAIR    </a>
+  </div>
+      <p class="site-description">
+      Federated and Independent Repositories    </p> 
+</div>
+<nav id="nav" class="nav-primary nav-menu" aria-label="Main">
+  <div id="menu-items-wrapper" class="menu-items-wrapper" style="top: 0px; height: auto;">
+    <ul id="main-menu" class="menu-items" itemscope="" itemtype="http://www.schema.org/SiteNavigationElement"><li id="menu-item-32" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-11 current_page_item active menu-item-32"><a itemprop="url" href="https://fair.pm/" class="nav-link" aria-current="page"><span itemprop="name">fair.pm</span></a></li></ul>
+  </div>
+</nav>
+</header>
+
 <h1><TMPL_VAR name></h1>
 <TMPL_VAR admin>
 
@@ -88,13 +106,12 @@
 
 
 <div class="sidebar">
-<img src="images/logo.png" width="136" height="136" alt="">
 
 <h2>Subscriptions</h2>
 <ul>
 <TMPL_LOOP Channels>
 <li>
-<a href="<TMPL_VAR url ESCAPE="HTML">" title="subscribe"><img src="images/feed-icon-10x10.png" alt="(feed)"></a> <a <TMPL_IF link>href="<TMPL_VAR link ESCAPE="HTML">" </TMPL_IF><TMPL_IF message>class="message" title="<TMPL_VAR message ESCAPE="HTML">"</TMPL_IF><TMPL_UNLESS message>title="<TMPL_VAR title_plain ESCAPE="HTML">"</TMPL_UNLESS>><TMPL_VAR name></a>
+[<a href="<TMPL_VAR url ESCAPE="HTML">" title="subscribe">RSS</a>] <a <TMPL_IF link>href="<TMPL_VAR link ESCAPE="HTML">" </TMPL_IF><TMPL_IF message>class="message" title="<TMPL_VAR message ESCAPE="HTML">"</TMPL_IF><TMPL_UNLESS message>title="<TMPL_VAR title_plain ESCAPE="HTML">"</TMPL_UNLESS>><TMPL_VAR name></a>
 </li>
 </TMPL_LOOP>
 </ul>
@@ -108,18 +125,6 @@ Powered by:<br>
 <a href="http://www.planetplanet.org/"><img src="images/planet.png" width="80" height="15" alt="Planet" border="0"></a>
 </p>
 
-<p>
-<h2>Planetarium:</h2>
-<ul>
-<li><a href="http://www.planetapache.org/">Planet Apache</a></li>
-<li><a href="http://planet.freedesktop.org/">Planet freedesktop.org</a></li>
-<li><a href="http://planet.gnome.org/">Planet GNOME</a></li>
-<li><a href="http://planet.debian.net/">Planet Debian</a></li>
-<li><a href="http://planet.fedoraproject.org/">Planet Fedora</a></li>
-<li><a href="http://planets.sun.com/">Planet Sun</a></li>
-<li><a href="http://www.planetplanet.org/">more...</a></li>
-</ul>
-</p>
 </div>
 </body>
 
