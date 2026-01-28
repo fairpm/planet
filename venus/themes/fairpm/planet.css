@@ -1,6 +1,6 @@
 
 body {
-	margin-right: 200px;
+	margin-right: 300px;
 	padding-left: 20px;
 	padding-right: 20px;
 	font-family: "Mona Sans", -apple-system, "BlinkMacSystemFont", "Segoe UI", "Roboto", "Oxygen-Sans", "Ubuntu", "Cantarell", "Helvetica Neue", sans-serif;
@@ -49,6 +49,7 @@ a:hover {
 }
 .channelgroup {
 	margin-left: 1.5rem;
+	position: relative;
 }
 .channelgroup .entry {
 	margin-left: 1.5rem;
@@ -71,20 +72,6 @@ a:hover {
 	height: 100%;
 	background: linear-gradient(180deg,rgba(255, 255, 255, .3) 20%, rgba(255, 255, 255, .5) 80%, rgba(255, 255, 255, 1) 95%);
 }
-.entry::after {
-		display: block;
-	content: "999";
-	background-color: #0073aa;
-	color: #fff;
-	font-weight: 600;
-	font-size: 1rem;
-	padding: .7ch 1.2ch;
-	position: absolute;
-	z-index: 9;
-	bottom: 1rem;
-	right: 20%;
-	border-radius: 6px;
-}
 .entry * {
 	font-weight: 300 !important;
 	font-size: .95rem;
@@ -98,6 +85,19 @@ a:hover {
 }
 .entry img, .entry figure, .entry iframe, .entry embed {
 	display: none !important; /* yes it's a poor hack */
+}
+.channelgroup a.button {
+	display: inline-block;
+	background-color: #0073aa;
+	color: #fff;
+	font-weight: 600;
+	font-size: 1rem;
+	padding: .7ch 1.2ch;
+	position: absolute;
+	z-index: 9;
+	bottom: 1rem;
+	right: 20%;
+	border-radius: 6px;
 }
 
 
@@ -154,15 +154,12 @@ img.face { display: none; }
 	position: absolute;
 	top: 0px;
 	right: 0px;
-	width: 200px;
-
+	width: 300px;
 	margin-left: 0px;
 	margin-right: 0px;
 	padding-right: 0px;
-
 	padding-top: 20px;
 	padding-left: 0px;
-
 	font-size: 85%;
 }
 .sidebar h2 {
@@ -175,6 +172,7 @@ img.face { display: none; }
 	padding-left: 1em;
 	margin-left: 0px;
 	list-style-type: none;
+	border-left: 2px solid #0049d1;
 }
 .sidebar ul li:hover {
 	color: grey;
@@ -189,7 +187,13 @@ img.face { display: none; }
 	border-top: 1px solid grey;
 	margin-top: 30px;
 	padding-top: 10px;
-	padding-left: 5px;
+	padding-left: 5;
+}
+.sidebar > p > span {
+	display: block;
+	padding-left: 15px;
+	margin-left: -5px;
+	border-left: 2px solid #0049d1;
 }
 .sidebar .message {
     cursor: help;
