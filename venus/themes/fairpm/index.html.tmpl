@@ -80,10 +80,10 @@
 <TMPL_IF title>
 <h4<TMPL_IF title_language> lang="<TMPL_VAR title_language>"</TMPL_IF>><a href="<TMPL_VAR link ESCAPE="HTML">"><TMPL_VAR title></a></h4>
 </TMPL_IF>
-<div class="entry"><a class="overlay" href="<TEMPL_VAR link ESCAPE="HTML">"></a>
+<div class="entry"><a class="overlay" href="<TMPL_VAR link ESCAPE="HTML">"></a>
 <div class="content"<TMPL_IF content_language> lang="<TMPL_VAR content_language>"</TMPL_IF>>
 <TMPL_VAR content>
-<a class="button" href="<TEMPL_VAR link ESCAPE="HTML">">Read Post at <TEMPL_VAR channel_name></a>
+<a class="button" href="<TMPL_VAR link ESCAPE="HTML">">Read Post at <TEMPL_VAR channel_name></a>
 </div>
 
 ### Planet also makes available all of the information from the feed
@@ -108,12 +108,13 @@
 
 
 <div class="sidebar">
+<img src="images/logo.png" width="136" height="136" alt="">
 
 <h2>Subscriptions</h2>
 <ul>
 <TMPL_LOOP Channels>
 <li>
-[<a href="<TMPL_VAR url ESCAPE="HTML">" title="subscribe">RSS</a>] <a <TMPL_IF link>href="<TMPL_VAR link ESCAPE="HTML">" </TMPL_IF><TMPL_IF message>class="message" title="<TMPL_VAR message ESCAPE="HTML">"</TMPL_IF><TMPL_UNLESS message>title="<TMPL_VAR title_plain ESCAPE="HTML">"</TMPL_UNLESS>><TMPL_VAR name></a>
+<img src="images/feed-icon-10x10.png" alt="(feed)"></a> <a <TMPL_IF link>href="<TMPL_VAR link ESCAPE="HTML">" </TMPL_IF><TMPL_IF message>class="message" title="<TMPL_VAR message ESCAPE="HTML">"</TMPL_IF><TMPL_UNLESS message>title="<TMPL_VAR title_plain ESCAPE="HTML">"</TMPL_UNLESS>><TMPL_VAR name></a>
 </li>
 </TMPL_LOOP>
 </ul>
