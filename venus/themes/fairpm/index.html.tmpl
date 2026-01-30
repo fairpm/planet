@@ -1,20 +1,21 @@
-<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
-<html>
+<!DOCTYPE html>
+<html lang="en-US">
 
 ### fairpm Planet HTML template
 ### (was) Fancy Planet HTML template.
-### 
+###
 ### When combined with the stylesheet and images in the output/ directory
 ### of the Planet source, this gives you a much prettier result than the
 ### default examples template and demonstrates how to use the config file
 ### to support things like faces
-### 
+###
 ### For documentation on the more boring template elements, see
 ### examples/config.ini and examples/index.html.tmpl in the Planet source.
 
 <head>
 <title><TMPL_VAR name></title>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1" />
 <meta name="generator" content="<TMPL_VAR generator ESCAPE="HTML">">
 <link rel="stylesheet" href="planet.css" type="text/css">
 <TMPL_IF feedtype>
@@ -23,24 +24,28 @@
 </head>
 
 <body>
-
 <div id="page" class="site">
-<header class="site-header">     
+<header class="site-header">
 <div class="site-branding">
   <div class="site-title">
     <a href="https://fair.pm/" rel="home" aria-current="page">
 		FAIR    </a>
   </div>
       <p class="site-description">
-      Federated and Independent Repositories    </p> 
+      Federated and Independent Repositories    </p>
 </div>
 <nav id="nav" class="nav-primary nav-menu" aria-label="Main">
-  <div id="menu-items-wrapper" class="menu-items-wrapper" style="top: 0px; height: auto;">
-    <ul id="main-menu" class="menu-items" itemscope="" itemtype="http://www.schema.org/SiteNavigationElement"><li id="menu-item-32" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-home current-menu-item page_item page-item-11 current_page_item active menu-item-32"><a itemprop="url" href="https://fair.pm/" class="nav-link" aria-current="page"><span itemprop="name">fair.pm</span></a></li></ul>
+  <div id="menu-items-wrapper" class="menu-items-wrapper">
+    <ul id="main-menu" class="menu-items" itemscope="" itemtype="http://www.schema.org/SiteNavigationElement">
+		<li class="menu-item menu-item-type-post_type menu-item-object-page menu-item-github">
+			<a itemprop="url" href="https://github.com/fairpm/" class="nav-link"><span itemprop="name">FAIR on Github</span></a>
+		</li>
+	</ul>
   </div>
 </nav>
 </header>
-
+<div class="wrapper">
+<main id="content">
 <h1><TMPL_VAR name></h1>
 <TMPL_VAR admin>
 
@@ -80,7 +85,7 @@
 <TMPL_IF title>
 <h4<TMPL_IF title_language> lang="<TMPL_VAR title_language>"</TMPL_IF>><a href="<TMPL_VAR link ESCAPE="HTML">"><TMPL_VAR title></a></h4>
 </TMPL_IF>
-<div class="entry"><a class="overlay" href="<TMPL_VAR link ESCAPE="HTML">"></a>
+<div class="entry">
 <div class="content"<TMPL_IF content_language> lang="<TMPL_VAR content_language>"</TMPL_IF>>
 <TMPL_VAR content>
 <a class="button" href="<TMPL_VAR link ESCAPE="HTML">">Read Post at <TMPL_VAR channel_name></a>
@@ -106,7 +111,8 @@
 </TMPL_IF>
 </TMPL_LOOP>
 
-
+</main>
+<aside>
 <div class="sidebar">
 <img src="images/logo.png" width="136" height="136" alt="">
 
@@ -114,7 +120,7 @@
 <ul>
 <TMPL_LOOP Channels>
 <li>
-<img src="images/feed-icon-10x10.png" alt="(feed)"></a> <a <TMPL_IF link>href="<TMPL_VAR link ESCAPE="HTML">" </TMPL_IF><TMPL_IF message>class="message" title="<TMPL_VAR message ESCAPE="HTML">"</TMPL_IF><TMPL_UNLESS message>title="<TMPL_VAR title_plain ESCAPE="HTML">"</TMPL_UNLESS>><TMPL_VAR name></a>
+<img src="images/feed-icon-10x10.png" alt="(feed)"> <a <TMPL_IF link>href="<TMPL_VAR link ESCAPE="HTML">" </TMPL_IF><TMPL_IF message>class="message" title="<TMPL_VAR message ESCAPE="HTML">"</TMPL_IF><TMPL_UNLESS message>title="<TMPL_VAR title_plain ESCAPE="HTML">"</TMPL_UNLESS>><TMPL_VAR name></a>
 </li>
 </TMPL_LOOP>
 </ul>
@@ -131,6 +137,8 @@ Powered by:<br>
 </p>
 
 </div>
+</aside>
+</div><!-- .wrapper -->
 </div><!-- #page .site -->
 </body>
 
