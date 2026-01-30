@@ -18,6 +18,10 @@ Feeds are stored in `config.ini`. Add a new feed and the name you'd like display
 
 All new feeds are approved by the TSC.
 
+## Deployment
+
+Updates are automatically deployed roughly every 5 minutes based on the `main` branch. Be aware that the Fastly cache is set to 1 hour, so there may be delays.
+
 ## Running locally
 
 Planet generates static files into `/data/output`, and stores the cache in `/data/cache`.

@@ -6,6 +6,30 @@ from reconstitute import createTextElement, date
 from spider import filename
 from planet import idindex
 
+atomNS = 'http://www.w3.org/2005/Atom'
+
+def _entry_date_sort_key(filepath):
+    """Return a time tuple for sorting: prefer entry's <updated> or <published>, else file mtime."""
+    try:
+        entry_doc = minidom.parse(filepath)
+        entry_doc.normalize()
+        root = entry_doc.documentElement
+        if root.nodeName != 'entry':
+            raise ValueError('not an entry')
+        for tag in ('updated', 'published'):
+            nodes = root.getElementsByTagNameNS(atomNS, tag)
+            if not nodes:
+                nodes = root.getElementsByTagName(tag)
+            if nodes and nodes[0].childNodes:
+                text = nodes[0].firstChild.nodeValue
+                if text and text.strip():
+                    parsed = feedparser._parse_date_iso8601(text.strip())
+                    if parsed:
+                        return parsed
+        return time.gmtime(os.stat(filepath).st_mtime)
+    except Exception:
+        return time.gmtime(os.stat(filepath).st_mtime)
+
 def splice():
     """ Splice together a planet from a cache of entries """
     import planet
@@ -13,10 +37,12 @@ def splice():
 
     log.info("Loading cached data")
     cache = config.cache_directory()
-    dir=[(os.stat(file).st_mtime,file) for file in glob.glob(cache+"/*")
-        if not os.path.isdir(file)]
-    dir.sort()
-    dir.reverse()
+    dir = []
+    for file in glob.glob(cache + "/*"):
+        if not os.path.isdir(file):
+            sort_key = _entry_date_sort_key(file)
+            dir.append((sort_key, file))
+    dir.sort(key=lambda x: x[0], reverse=True)
 
     max_items=max([config.items_per_page(templ)
         for templ in config.template_files() or ['Planet']])
@@ -89,9 +115,8 @@ def splice():
     # insert entry information
     items = 0
     count = {}
-    atomNS='http://www.w3.org/2005/Atom'
     new_feed_items = config.new_feed_items()
-    for mtime,file in dir:
+    for sort_key, file in dir:
         if index != None:
             base = os.path.basename(file)
             if index.has_key(base) and index[base] not in sub_ids: continue
